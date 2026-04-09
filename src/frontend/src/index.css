@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Cream/warm background */
+    --background: 0.965 0.025 75;
+    --foreground: 0.15 0.005 250;
+
+    --card: 1 0 0;
+    --card-foreground: 0.15 0.005 250;
+
+    --popover: 1 0 0;
+    --popover-foreground: 0.15 0.005 250;
+
+    /* Gold #d4af37 */
+    --primary: 0.75 0.14 85;
+    --primary-foreground: 0.12 0.005 250;
+
+    --secondary: 0.96 0.02 75;
+    --secondary-foreground: 0.15 0.005 250;
+
+    --muted: 0.97 0.018 75;
+    --muted-foreground: 0.45 0.02 75;
+
+    --accent: 0.75 0.14 85;
+    --accent-foreground: 0.12 0.005 250;
+
+    --destructive: 0.55 0.22 25;
+    --destructive-foreground: 0.98 0 0;
+
+    --border: 0.88 0.025 85;
+    --input: 0.88 0.025 85;
+    --ring: 0.75 0.14 85;
+
+    --radius: 0.375rem;
+
+    /* Gold dark for hover */
+    --gold: 0.75 0.14 85;
+    --gold-dark: 0.62 0.13 85;
+    --cream: 0.965 0.025 75;
+    --jet: 0.13 0.005 250;
+
+    --chart-1: 0.75 0.14 85;
+    --chart-2: 0.62 0.13 85;
+    --chart-3: 0.55 0.1 75;
+    --chart-4: 0.45 0.08 60;
+    --chart-5: 0.35 0.06 50;
+
+    --sidebar: 0.15 0.005 250;
+    --sidebar-foreground: 0.96 0.02 75;
+    --sidebar-primary: 0.75 0.14 85;
+    --sidebar-primary-foreground: 0.12 0.005 250;
+    --sidebar-accent: 0.22 0.01 250;
+    --sidebar-accent-foreground: 0.96 0.02 75;
+    --sidebar-border: 0.25 0.01 250;
+    --sidebar-ring: 0.75 0.14 85;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "DM Sans", sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: "Playfair Display", serif;
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: oklch(var(--background));
+}
+::-webkit-scrollbar-thumb {
+  background: oklch(var(--gold));
+  border-radius: 3px;
+}
+
+/* Gold button utility */
+.btn-gold {
+  background: oklch(var(--gold));
+  color: oklch(var(--jet));
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  transition: background 0.2s, color 0.2s;
+}
+.btn-gold:hover {
+  background: oklch(var(--jet));
+  color: oklch(var(--gold));
+}
+
+/* Nav gold bar */
+.nav-gold a:hover {
+  background: white;
+  color: oklch(var(--jet)) !important;
+}
